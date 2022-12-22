@@ -10,7 +10,10 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {    
-    animation: App-logo-spin infinite 30s linear;
+    animation: App-logo-spin infinite 8s linear;
+  }
+  .App-logo-link:hover, .App-logo-link:active {    
+    animation: App-logo-spin-quick infinite 4s linear;
   }
 }
 
@@ -30,13 +33,21 @@
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  0%   {transform: rotate(0deg);}
+  25%   {transform: rotate(10deg);}
+  50%  {transform: rotate(0deg);}
+  75%  {transform: rotate(-10deg);}
+  100% {transform: rotate(0deg);}
 }
+
+@keyframes App-logo-spin-quick {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+  }
 
 .code-form input {
     width: 48px;
@@ -60,6 +71,11 @@
     color: white;
 }
 
+.code-form .code4:focus {
+    background-color: #f8931f;
+    color: white;
+}
+
 button {
     background: #FFCA2C;
     border: none;
@@ -67,4 +83,11 @@ button {
     font-weight: bold;
     padding: 0px 16px 0px 16px;
     margin-left: 3px;
+}
+
+.secret-text {
+    font-size: 11px;
+    color: gray;
+    position: absolute;
+    top: 2px;
 }
